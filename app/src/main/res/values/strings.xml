@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+<!--    <integer name="unit_kg_min">1</integer>-->
+<!--    <integer name="unit_kg_max">180</integer>-->
+
+
+<!--    <integer name="unit_lb_min">1</integer>-->
+<!--    <integer name="unit_lb_max">500</integer>-->
+
+<!--    <string name="unit_kg">KG\'s</string>-->
+<!--    <string name="unit_lb">LB\'s</string>-->
+
+    <string name="underWeightText">Underweight</string>
+    <string name="normalWeightText">Normal Weight</string>
+    <string name="overWeightText">Overweight</string>
+    <string name="obeseWeightText">Obesity Class 1</string>
+    <string name="excessObeseWeightText">Obesity Class 2/3</string>
+    <string name="bmi_result_heading">Your Result</string>
+
+
+</resources>

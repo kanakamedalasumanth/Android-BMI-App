@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/textView_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your BMI"
+        android:textAlignment="center"
+        />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        android:gravity="center_horizontal"
+
+      >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.marcinmoskala.arcseekbar.ArcSeekBar
+                android:id="@+id/arcSeekBar_bmi_scale"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:maxProgress="35"
+
+                app:progressBackgroundColor="@color/colorPrimary"
+
+                app:progressBackgroundWidth="10dp"
+                app:progressColor="@color/colorAccent"
+                app:progressWidth="10dp"
+                app:thumb="@drawable/thumb2" />
+
+            <ImageView
+                android:id="@+id/imageView_weight_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/arcSeekBar_bmi_scale"
+                app:srcCompat="@drawable/ic_user"
+                app:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/textView_bmi"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="18.5"
+                android:textAlignment="center"
+                android:textSize="60sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_weight_icon"
+                app:layout_constraintStart_toStartOf="@+id/imageView_weight_icon"
+                app:layout_constraintTop_toBottomOf="@+id/imageView_weight_icon" />
+
+            <TextView
+                android:id="@+id/weight_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=""
+
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/textView_bmi"
+                app:layout_constraintStart_toStartOf="@+id/textView_bmi"
+                app:layout_constraintTop_toBottomOf="@+id/textView_bmi" />
+
+            <ImageView
+                android:id="@+id/imageView_weight_logo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                app:tint="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView_height_logo"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weight_category"
+                app:srcCompat="@drawable/ic_body_scale" />
+
+            <ImageView
+                android:id="@+id/imageView_height_logo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                app:tint="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageView_weight_logo"
+                app:layout_constraintTop_toBottomOf="@+id/weight_category"
+                app:srcCompat="@drawable/ic_measuring" />
+
+            <TextView
+                android:id="@+id/textView_weight_kg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:tint="@color/colorAccent"
+                android:text="66 Kg's"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_weight_logo"
+                app:layout_constraintStart_toStartOf="@+id/imageView_weight_logo"
+                app:layout_constraintTop_toBottomOf="@+id/imageView_weight_logo" />
+
+            <TextView
+                android:id="@+id/textView_height_cm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:tint="@color/colorAccent"
+                android:text="180 cm"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_height_logo"
+                app:layout_constraintHorizontal_bias="0.558"
+                app:layout_constraintStart_toStartOf="@+id/imageView_height_logo"
+                app:layout_constraintTop_toBottomOf="@+id/imageView_height_logo" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="16dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:cardCornerRadius="10dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:paddingBottom="16dp"
+                android:orientation="vertical"
+           >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="10"
+                    android:layout_margin="2dp"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageView_underWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_dot"
+                        app:tint="@color/underWeight" />
+
+                    <TextView
+                        android:id="@+id/textView_underWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="9"
+                        android:autoSizeTextType="uniform"
+                        android:text="If you are &lt;18 then Under Weight" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="10"
+                    android:layout_margin="2dp"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageView_normalWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_dot"
+                        app:tint="@color/normalWeight" />
+
+                    <TextView
+                        android:id="@+id/textView_normalWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="9"
+                        android:autoSizeTextType="uniform"
+                        android:text="If you are &lt;18.5 - 24.9 then Normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="10"
+                    android:layout_margin="2dp"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageView_overWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_dot"
+                        app:tint="@color/overWeight" />
+
+                    <TextView
+                        android:id="@+id/textView_overWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="9"
+                        android:autoSizeTextType="uniform"
+                        android:text="If you are &lt;25 - 29.9 then overweight" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="10"
+                    android:layout_margin="2dp"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageView_obese"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_dot"
+                        app:tint="@color/obese" />
+
+                    <TextView
+                        android:id="@+id/textView_obese"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="9"
+                        android:autoSizeTextType="uniform"
+                        android:text="If you are &lt;30 - 34 then obese" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="10"
+                    android:layout_margin="2dp"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/imageView_extremeObese"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_dot"
+                        app:tint="@color/extremeObese" />
+
+                    <TextView
+                        android:id="@+id/textView_extremeObese"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="9"
+                        app:layout_constraintHorizontal_weight="1"
+                        android:autoSizeTextType="uniform"
+                        android:text="If you are &gt;35 then extreme obese" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>

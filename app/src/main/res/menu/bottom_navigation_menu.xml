@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_bmi_calculator"
+        android:title="BMI Calculator"
+        android:icon="@drawable/ic_body_scale"
+        android:state_checked="true"
+
+        />
+
+<!--    <item-->
+<!--        android:id="@+id/item_setting"-->
+<!--        android:icon="@drawable/outline_settings_24"-->
+<!--        android:title="Settings"-->
+<!--        />-->
+    <item
+        android:id="@+id/item_aboutus"
+        android:icon="@drawable/outline_play_arrow_24"
+        android:title="About Us"
+        />
+</menu>
