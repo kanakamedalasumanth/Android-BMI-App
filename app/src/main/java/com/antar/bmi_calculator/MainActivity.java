@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements  BottomNavigation
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
 
         binding =  ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();

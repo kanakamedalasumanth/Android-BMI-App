@@ -37,8 +37,6 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
 
     private Handler mHandler;
 
-    OnLongClickRunner onLongClickRunner = new OnLongClickRunner(this);;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -177,45 +175,35 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
     public boolean onTouch(View v, MotionEvent event) {
 
 
+       if(event.getAction() == MotionEvent.ACTION_DOWN){
+//            Log.i(TAG,"ACTION_DOWN" );
+            v.setPressed(true);
+            mHandler = new Handler();
+            mHandler.post(new OnLongClickRunner(this,v));
 
-        if(event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL){
-//            Log.i(TAG,"ACTION_UP" );
+
+        }
+        if(event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL)
+        {
+//            Log.i(TAG,"ACTION_UP" +event.getAction()  );
             v.setPressed(false);
-            onLongClickRunner.unSetView();
             mHandler.removeCallbacksAndMessages(null);
             mHandler=null;
-
         }
-        else if(event.getAction() == MotionEvent.ACTION_DOWN){
-//            Log.i(TAG,"ACTION_DOWN");
-            v.setPressed(true);
-            onLongClickRunner.setView(v);
-            mHandler = new Handler();
-            mHandler.post(onLongClickRunner);
 
-
-        }
 
         return true;
     }
 
-    private static class OnLongClickRunner implements Runnable{
+    private class OnLongClickRunner implements Runnable{
        private Fragment_BMI_Calculator context;
        View v = null;
 
-        OnLongClickRunner(Fragment_BMI_Calculator context)
+        OnLongClickRunner(Fragment_BMI_Calculator context,View v)
        {
            this.context = context;
+           this.v = v;
        }
-
-       void setView(View v)
-       {
-        this.v= v;
-       }
-        void unSetView()
-        {
-            this.v= null;
-        }
 
        @Override
        public void run() {

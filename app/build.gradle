@@ -6,6 +6,8 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+
     defaultConfig {
         applicationId "com.antar.bmi_calculator"
         minSdkVersion 24
