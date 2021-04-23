@@ -1,5 +1,5 @@
 # Android-BMI-App
-This project consist on creating an Android App that calculates BMI ( Body Mass Index ) & then report its status.And this app is made for educational purpose.
+This project consist on creating an Android App that calculates BMI ( Body Mass Index ) & then report its status.This application is made for educational purpose and you are free to download.
 
 App Screens
 --------
