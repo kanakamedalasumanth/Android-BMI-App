@@ -213,6 +213,14 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:tint="@color/transparent90"
                     app:srcCompat="@drawable/ic_twitter" />
+                <ImageButton
+                    android:layout_margin="4dp"
+                    android:id="@+id/imageButton_sai_facebook"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@color/transparent90"
+                    app:srcCompat="@drawable/ic_facebook_circular_logo" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

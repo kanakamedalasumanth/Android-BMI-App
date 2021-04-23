@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity implements  BottomNavigation
             case R.id.item_bmi_calculator:
                 setBMIFragment();
                 break;
-//            case R.id.item_setting:
-//                setSettingFragment();
-//                break;
+            case R.id.item_setting:
+                setSettingFragment();
+                break;
             case R.id.item_aboutus:
                 setAboutusFragment();
                 break;
