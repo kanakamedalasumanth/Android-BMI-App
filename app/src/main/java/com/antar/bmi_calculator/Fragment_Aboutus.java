@@ -16,10 +16,10 @@ import com.antar.bmi_calculator.databinding.FragmentAboutusBinding;
 public class Fragment_Aboutus  extends Fragment implements View.OnClickListener {
 
     private FragmentAboutusBinding binding;
-    private static final String SAI_GITHUB_LINK = "https://github.com/kanakamedalasumanth";
-    private static final String SAI_TWITTER_LINK = "https://twitter.com/Sumanth_Kanak";
-    private static final String SAI_LINKEDIN_LINK = "https://www.linkedin.com/in/sumanth-kanakamedala-955a571b/";
-    private static final String SAI_FB_LINK = "https://www.facebook.com/";
+    private static final String SAI_GITHUB_LINK = "https://github.com/daruvurisai";
+    private static final String SAI_TWITTER_LINK = "https://twitter.com/daruvurisaik";
+    private static final String SAI_LINKEDIN_LINK = "https://www.linkedin.com/in/daruvurisaikrishna";
+    private static final String SAI_FB_LINK = "https://www.facebook.com/daruvurisai";
 
     private static final String SUMANTH_GITHUB_LINK = "https://github.com/kanakamedalasumanth";
     private static final String SUMANTH_TWITTER_LINK = "https://twitter.com/Sumanth_Kanak";
