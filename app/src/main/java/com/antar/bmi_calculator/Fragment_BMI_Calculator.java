@@ -37,12 +37,12 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
 
     private Handler mHandler;
 
-    OnLongClickRunner onLongClickRunner = new OnLongClickRunner(this);
+    OnLongClickRunner onLongClickRunner = new OnLongClickRunner(this);;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
+//        Log.i(TAG,"onCreateView");
         super.onCreateView(inflater, container, savedInstanceState);
         binding = FragmentWeightCalculatorBinding.inflate( inflater, container, false);
 
@@ -60,7 +60,8 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
         binding.imageButtonAgeRemove.setOnTouchListener(this);
 
         binding.fluidSliderWeight.setPositionListener(pos -> {
-            setWeight((int)(min_kg + (total  * pos)));
+            int weight = (int)(min_kg + (total  * pos));
+            setWeight(weight);
             return Unit.INSTANCE;
         });
 
@@ -68,6 +69,8 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
         setHeight(bmi_model.getHeight());
         setAge(bmi_model.getAge());
         setGender(bmi_model.getGender());
+
+
 
         return binding.getRoot() ;
 
@@ -97,7 +100,7 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
     void setBMIResultFragment()
     {
 
-        Log.i(TAG,"Came Here");
+//        Log.i(TAG,"Came Here");
         Bundle bundle = new Bundle();
         bundle.putSerializable(KEY_MODEL,bmi_model);
         new FullScreenDialogFragment.Builder(getActivity())
@@ -113,9 +116,11 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
     void setWeight(int weight)
     {
         binding.textViewWeight.setText(String.valueOf(weight));
+
         bmi_model.setWeight(weight);
         bmi_model.setUnits(BMI_Model.WeightUnits.kg);
         binding.fluidSliderWeight.setBubbleText(String.valueOf(weight));
+
     }
 
     void setHeight(int height)
@@ -140,7 +145,7 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
             binding.imageButtonHeightAdd.setColorFilter(getActivity().getColor(R.color.genderMaleSelect));
             binding.imageButtonHeightRemove.setColorFilter(getActivity().getColor(R.color.genderMaleSelect));
             binding.buttonCalculate.setBackgroundColor(getActivity().getColor(R.color.genderMaleSelect));
-            binding.fluidSliderWeight.setPosition(bmi_model.getWeight());
+            binding.fluidSliderWeight.setPosition(binding.fluidSliderWeight.getPosition());
         }
         else
         {
@@ -155,7 +160,9 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
             binding.imageButtonHeightRemove.setColorFilter(getActivity().getColor(R.color.genderFemaleSelect));
 
             binding.buttonCalculate.setBackgroundColor(getActivity().getColor(R.color.genderFemaleSelect));
-            binding.fluidSliderWeight.setPosition(bmi_model.getWeight());
+            binding.fluidSliderWeight.setPosition(binding.fluidSliderWeight.getPosition());
+
+
         }
 
     }
@@ -171,25 +178,25 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
 
 
 
-        if(event.getAction() == MotionEvent.ACTION_UP){
-            //Log.i(TAG,"ACTION_UP");
+        if(event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL){
+//            Log.i(TAG,"ACTION_UP" );
             v.setPressed(false);
             onLongClickRunner.unSetView();
             mHandler.removeCallbacksAndMessages(null);
             mHandler=null;
-            return true;
+
         }
-        else if(event.getAction() ==MotionEvent.ACTION_DOWN){
-            //Log.i(TAG,"ACTION_DOWN");
+        else if(event.getAction() == MotionEvent.ACTION_DOWN){
+//            Log.i(TAG,"ACTION_DOWN");
             v.setPressed(true);
             onLongClickRunner.setView(v);
             mHandler = new Handler();
             mHandler.post(onLongClickRunner);
 
-            return true;
+
         }
 
-        return false;
+        return true;
     }
 
     private static class OnLongClickRunner implements Runnable{
@@ -215,23 +222,25 @@ public class Fragment_BMI_Calculator extends Fragment implements View.OnClickLis
 
            switch (v.getId()) {
                case R.id.imageButton_age_add:
-                   int age = Integer.parseInt(context.binding.textViewAge.getText().toString()) + 1;
+                   int age = Integer.parseInt(context.binding.textViewAge.getText().toString())+1;
                    context.setAge(age);
                    break;
                case R.id.imageButton_age_remove:
-                   int age1 = Integer.parseInt(context.binding.textViewAge.getText().toString()) - 1;
+                   int age1 = Integer.parseInt(context.binding.textViewAge.getText().toString());
+                   age1 = (age1==0)?0:--age1;
                    context.setAge(age1);
                    break;
                case R.id.imageButton_height_add:
-                   int height = Integer.parseInt(context.binding.textViewHeight.getText().toString()) + 1;
+                   int height = Integer.parseInt(context.binding.textViewHeight.getText().toString())+1;
                    context.setHeight(height);
                    break;
                case R.id.imageButton_height_remove:
-                   int height1 = Integer.parseInt(context.binding.textViewHeight.getText().toString()) - 1;
+                   int height1 = Integer.parseInt(context.binding.textViewHeight.getText().toString());
+                   height1 = (height1==0)?0:--height1;
                    context.setHeight(height1);
                    break;
            }
-           context.mHandler.postDelayed(OnLongClickRunner.this,200);
+           context.mHandler.postDelayed(OnLongClickRunner.this,100);
        }
    }
 
