@@ -18,10 +18,7 @@ import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 public class MainActivity extends AppCompatActivity implements  BottomNavigationView.OnNavigationItemSelectedListener {
     private ActivityMainBinding binding;
 
-
-
     static final String TAG = "D_MainActivity";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +32,6 @@ public class MainActivity extends AppCompatActivity implements  BottomNavigation
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener(this);
         binding.bottomNavigation.setSelectedItemId(R.id.item_bmi_calculator);
-
-
-
-
-
     }
 
 
