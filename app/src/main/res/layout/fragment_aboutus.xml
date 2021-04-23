@@ -157,7 +157,9 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_sumanth_info" >
+        app:layout_constraintTop_toBottomOf="@+id/cardView_sumanth_info"
+        android:layout_marginBottom="32dp"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
