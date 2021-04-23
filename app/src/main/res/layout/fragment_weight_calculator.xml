@@ -375,11 +375,13 @@
         android:id="@+id/button_calculate"
         android:layout_width="0dp"
         android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:layout_weight="1"
         android:text="Calculate"
+
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-
         app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
